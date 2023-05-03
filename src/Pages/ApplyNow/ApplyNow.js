@@ -1,7 +1,23 @@
+import axios from "axios";
 import React from "react";
+import { useForm } from "react-hook-form";
 import { FaAngleRight } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const ApplyNow = () => {
+  const {
+    register,
+    handleSubmit,
+  } = useForm();
+
+const onSubmit = data => {
+    axios.post('https://gabroad-server.vercel.app/applicant', data)
+    .then(res=> console.log(res) )
+    .catch(err=> console.log(err))
+    
+    toast.success(`Thank You Successfully applied`);
+
+}
   return (
     <div>
       <div className="mt-14">
@@ -13,6 +29,7 @@ const ApplyNow = () => {
           consultation with ACADEMIC EDUCATION office (Face to Face or Virtual)
         </p>
       </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
 
       <div className="justify-center">
       <div className=" border-4  border-black-100 shadow-2xl lg:w-9/12 lg:ml-40 mt-20 mb-16">
@@ -33,6 +50,12 @@ const ApplyNow = () => {
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
+              {...register("firstName", {
+                required:{
+                    
+                    message:'First Name is Required'
+                }
+            })}
             />
           </div>
           <div className="form-control w-full max-w-xs">
@@ -43,6 +66,12 @@ const ApplyNow = () => {
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
+              {...register("lastName", {
+                required:{
+                    
+                    message:'Last Name is Required'
+                }
+            })}
             />
           </div>
         </div>
@@ -51,7 +80,13 @@ const ApplyNow = () => {
         <label className="label">
               <span className="label-text">Address</span>
             </label>
-        <input type="text" placeholder="Type here" className="input input-bordered w-10/12 " />
+        <input type="text" placeholder="Type here" className="input input-bordered w-10/12 " 
+         {...register("address", {
+          required:{
+              
+              message:'Address is Required'
+          }
+      })}/>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 mt-16 lg:ml-36">
@@ -63,6 +98,12 @@ const ApplyNow = () => {
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
+              {...register("email", {
+                required:{
+                    
+                    message:'Email is Required'
+                }
+            })}
             />
           </div>
           <div className="form-control w-full max-w-xs">
@@ -73,6 +114,12 @@ const ApplyNow = () => {
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
+              {...register("CountryResidence", {
+                required:{
+                    
+                    message:'Country Name is Required'
+                }
+            })}
             />
           </div>
         </div>
@@ -86,6 +133,12 @@ const ApplyNow = () => {
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
+              {...register("institution", {
+                required:{
+                    
+                    message:'Institution Name is Required'
+                }
+            })}
             />
           </div>
           <div className="form-control w-full max-w-xs">
@@ -96,6 +149,12 @@ const ApplyNow = () => {
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
+              {...register("nationality", {
+                required:{
+                    
+                    message:'Nationality is Required'
+                }
+            })}
             />
           </div>
         </div>
@@ -110,6 +169,12 @@ const ApplyNow = () => {
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
+              {...register("course", {
+                required:{
+                    
+                    message:'Course Name is Required'
+                }
+            })}
             />
           </div>
           <div className="form-control w-full max-w-xs">
@@ -120,6 +185,12 @@ const ApplyNow = () => {
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
+              {...register("intakeYear", {
+                required:{
+                    
+                    message:'Intake Year is Required'
+                }
+            })}
             />
           </div>
         </div>
@@ -153,6 +224,8 @@ const ApplyNow = () => {
           <button class=" bg-primary flex text-white rounded-full font-medium btn-md w-54"><span className='mt-3 ml-1'>Submit Application</span> <FaAngleRight className='mt-4 ml-1'/></button>
           </div>
       </div>
+
+      </form>
 
     
       

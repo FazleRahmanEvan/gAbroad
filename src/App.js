@@ -8,15 +8,24 @@ import EduCanada from './Pages/Canada/EduCanada/EduCanada/EduCanada';
 import FundCanada from './Pages/Canada/FundCanada/FundCanada/FundCanada';
 import VisaCanada from './Pages/Canada/VisaCanada/VisaCanada/VisaCanada';
 import Countries from './Pages/Countries/Countries/Countries';
+import Dashboard from './Pages/Dashboard/Dashboard';
 import CourseDetails from './Pages/FindCourse&Details/CourseDetails/CourseDetails/CourseDetails';
 import FindCourse from './Pages/FindCourse&Details/FindCourse/FindCourse/FindCourse';
 
 import Home from './Pages/Home/Home/Home';
+import Login from './Pages/Login/Login';
+import SignUp from './Pages/Login/SignUp';
 import PrivacyPolicy from './Pages/PrivacyPolicy/PrivacyPolicy/PrivacyPolicy';
 import Services from './Pages/Services/Services/Services';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import TearmsUse from './Pages/TearmsUse/TearmsUse/TearmsUse';
+import RequireAuth from './Pages/Login/RequireAuth';
+import Users from './Pages/Dashboard/Users/Users';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import Applicants from './Pages/Dashboard/Applicants/Applicants';
 
 function App() {
   return (
@@ -35,9 +44,22 @@ function App() {
      <Route path="/educationCanada" element={ <EduCanada></EduCanada>}></Route>
      <Route path="/findCourse" element={ <FindCourse></FindCourse>}></Route>
      <Route path="/courseDetails" element={ <CourseDetails></CourseDetails>}></Route>
-     <Route path="/applyNow" element={ <ApplyNow></ApplyNow>}></Route>
+     <Route path="/applyNow" element={ 
+     <RequireAuth>
+      <ApplyNow></ApplyNow>
+     </RequireAuth>}></Route>
+     <Route path="/login" element={ <Login></Login>}></Route>
+     <Route path="/signup" element={ <SignUp></SignUp>}></Route>
+     <Route path="/adminDashboard" element={<RequireAuth><Dashboard/>
+       </RequireAuth>}> 
+      <Route path='users' index element={<Users></Users>}></Route>
+      <Route path='applicants'  element={<Applicants></Applicants>}></Route>
+       </Route>
+     
      </Routes>
+     <ToastContainer />
      <Footer></Footer>
+   
     </div>
   );
 }

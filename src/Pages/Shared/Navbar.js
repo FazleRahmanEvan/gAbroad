@@ -3,8 +3,44 @@ import logo1 from '../../image/Logo 1.png'
 import { FaFacebook,FaTwitter,FaLinkedinIn,FaPhoneAlt} from "react-icons/fa";
 import './Navbar.css'
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
+import useAdmin from '../../hooks/UseAdmin';
 
 const Navbar = () => {
+ 
+ 
+  const [user,loading,error] = useAuthState(auth);
+  
+  const logout = () => {
+    signOut(auth)
+    localStorage.removeItem('accessToken');
+}
+const [admin] = useAdmin(user)
+
+  const menuItems = <>
+      <div>
+
+
+
+</div>
+{/* <div>
+
+<Link to="/signup"> <a class="btn w-28 text-white bg-yellow-300 font-bold rounded-full border-none">
+  Sign Up
+</a></Link>
+
+</div> */}
+
+  {/* {
+     user && <li className='text-white'><Link to ="/dashboard">Dashboard</Link></li>
+  } */}
+
+  <div className='btn w-28 text-white bg-yellow-300 font-bold rounded-full border-none'>{user ? <button className="" onClick={logout}>Sign Out</button>:<Link to="/login"> Log In</Link>}</div>
+</>
+
+
   return (
     <div>
       <div class="navbar bg-base-100 py-8">
@@ -44,16 +80,9 @@ const Navbar = () => {
                   </p>
                 </div>
               </div>
-              <div>
-                <a class="btn w-28 bg-yellow-300 rounded-full border-none">
-                  Sign In
-                </a>
-              </div>
-              <div>
-                <a class="btn w-28 bg-yellow-300 rounded-full border-none">
-                  Sign Up
-                </a>
-              </div>
+
+              {menuItems}
+          
             </ul>
           </div>
           <div class="w-28 rounded-full ml-16">
@@ -79,16 +108,9 @@ const Navbar = () => {
           </div>
           <div class="divider divider-horizontal"></div>
           <div>
-            <a class="btn w-28 bg-yellow-300 rounded-full border-none text-white">
-              Sign In
-            </a>
+          {menuItems}
           </div>
-          <div class="divider divider-horizontal"></div>
-          <div>
-            <a class="btn w-28 bg-yellow-300 rounded-full border-none text-white">
-              Sign Up
-            </a>
-          </div>
+          
         </div>
       </div>
 
@@ -129,6 +151,10 @@ const Navbar = () => {
         </li>
               <li className="mt-4 "><Link to="/services">Services</Link></li>
               <li className="mt-4 "><Link to="/about">About</Link></li>
+              {admin ?? <>
+                <li className=""><Link to="/adminDashboard">Dashboard</Link></li>
+              </>}
+              
              
 
               <li>
@@ -189,6 +215,9 @@ const Navbar = () => {
         </li>
             <li className=""><Link to="/services">Services</Link></li>
             <li className=" "><Link to="/about">About</Link></li>
+            {admin && <>
+                <li className=""><Link to="/adminDashboard">Dashboard</Link></li>
+              </>}
 
             <li>
               <div class="max-w-md mx-auto ml-24">

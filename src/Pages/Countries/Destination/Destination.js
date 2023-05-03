@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const Destination = () => {
   return (
     <div>
-      <h1 className="text-4xl text-primary text-start font-medium mt-16 mb-8 lg:ml-16">
+      <h1 className="text-4xl text-primary text-start font-medium mt-24 mb-8 lg:ml-16">
         Pick a study <span className="text-secondary">Destination</span>{" "}
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6 p-6 lg:ml-6">
+      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6 p-6 mt-14 lg:ml-6">
         <div className="card w-80 bg-base-100 shadow-xl">
           <figure>
             <img

@@ -90,14 +90,7 @@ const Institutes = () => {
               />
             </figure>
           </div>
-          <div className="card w-56 ">
-            <figure>
-              <img className="w-1/2 mt-16 mb-16"
-                src="https://assets.stickpng.com/images/626ba1571dc4c3b537787e08.png"
-                alt="Shoes"
-              />
-            </figure>
-          </div>
+        
           <div className="card w-56 ">
             <figure>
               <img className="w-1/2 mt-16 mb-16"

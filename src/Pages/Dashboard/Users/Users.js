@@ -15,7 +15,7 @@ if (isLoading) {
 }
     return (
       <div className='mt-'>
-            <h2 className="text-2xl">All Users{users.length}</h2>
+            <h2 className="text-2xl mt-6 mb-8">All Users{users.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                   
@@ -24,7 +24,7 @@ if (isLoading) {
                             <th>No.</th>
                             <th>email</th>
                             <th>Make Admin</th>
-                            <th>Remove</th>
+                            {/* <th>Remove</th> */}
                           
                         </tr>
                     </thead>

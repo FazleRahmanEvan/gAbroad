@@ -40,6 +40,14 @@ const [admin] = useAdmin(user)
   <div className='btn w-28 text-white bg-yellow-300 font-bold rounded-full border-none'>{user ? <button className="" onClick={logout}>Sign Out</button>:<Link to="/login"> Log In</Link>}</div>
 </>
 
+    const secondMenuItem = <>
+      <div>
+       { admin && 
+                <li className=""><Link to="/adminDashboard">Dashboard</Link></li>
+              }
+      </div>
+       </>
+
 
   return (
     <div>
@@ -151,9 +159,8 @@ const [admin] = useAdmin(user)
         </li>
               <li className="mt-4 "><Link to="/services">Services</Link></li>
               <li className="mt-4 "><Link to="/about">About</Link></li>
-              {admin ?? <>
-                <li className=""><Link to="/adminDashboard">Dashboard</Link></li>
-              </>}
+              <li className="mt-4 ">{secondMenuItem }</li>
+             
               
              
 
@@ -215,9 +222,7 @@ const [admin] = useAdmin(user)
         </li>
             <li className=""><Link to="/services">Services</Link></li>
             <li className=" "><Link to="/about">About</Link></li>
-            { admin && <>
-                <li className=""><Link to="/adminDashboard">Dashboard</Link></li>
-              </>}
+            { secondMenuItem }
 
             <li>
               <div class="max-w-md mx-auto ml-24">

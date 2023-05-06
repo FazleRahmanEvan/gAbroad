@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { FaAngleDown } from "react-icons/fa";
-import Universitys from '../Universitys/Universitys';
+import VersityList from '../Universitys/VersityList';
 
 const FindCourse = () => {
-  const [countries, setCountries] = useState([]);
+  // const [countries, setCountries] = useState([]);
 
-  function  onChange(e){
-    if (e.target.checked) {
-      setCountries((prev) => [...prev, e.target.name]);
-    } else {
-      const filteredCountires = countries.filter((c) => c !== e.target.name);
-      setCountries(filteredCountires);
+  // function  onChange(e){
+  //   if (e.target.checked) {
+  //     setCountries((prev) => [...prev, e.target.name]);
+  //   } else {
+  //     const filteredCountires = countries.filter((c) => c !== e.target.name);
+  //     setCountries(filteredCountires);
       
-    }
+  //   }
  
-  }
-  console.log(countries)
+  // }
+  // console.log(countries)
 
     return (
         <div className='lg:p-10'>
@@ -24,7 +24,7 @@ const FindCourse = () => {
 
 <div className=' lg:ml-32 lg:flex mt-16 mb-16 '>
 
-       <div className="dropdown">
+       {/* <div className="dropdown">
        <button className='border border-black sm:w-60 lg:w-96 p-3 flex justify-around'>Countries <FaAngleDown className=' mt-1'/> </button>
   <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100  w-52">
 
@@ -66,7 +66,7 @@ const FindCourse = () => {
     </div>
 
   </ul>
-  </div>
+  </div> */}
 
   {/* <div className="dropdown">
   <button className='border border-black sm:w-60 lg:w-96 p-3 flex justify-around'>Course <FaAngleDown className=' mt-1'/> </button>
@@ -98,7 +98,7 @@ const FindCourse = () => {
   </ul>
   </div>  */}
 
-  <div className="dropdown">
+  {/* <div className="dropdown">
   <button className='border border-black sm:w-60 lg:w-96 p-3 flex justify-around'>University <FaAngleDown className=' mt-1'/> </button>
   <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100  w-52">
 
@@ -126,11 +126,11 @@ const FindCourse = () => {
     </div>
 
   </ul>
-  </div>
+  </div> */}
 
        </div>
 
-       <Universitys></Universitys>
+       <VersityList></VersityList>
 
         </div>
     );

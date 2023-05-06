@@ -4,27 +4,15 @@ import { Link } from 'react-router-dom';
 import VersityCard from './VersityCard';
 
 
-const Universitys = () => {
-    const [universities, setUniversities] = useState([]);
-
-    const [country,setCountry] = useState([]);
+const Universitys = ({versity}) => {
     
-
-    useEffect(()=>{
-        fetch('university.json')
-        .then(res => res.json())
-        .then(data => setUniversities(data));
-        setCountry([...new Set(country.map((item)=> item.countryName))])
-        console.log(universities)
-       
-    }, [])
 
     return (
        
             <div className='lg:mt-28'>
                
             {
-                universities.map(universities=> <VersityCard
+                versity.map(universities=> <VersityCard
                    key={universities._id}
                    universities ={universities}
                    />)

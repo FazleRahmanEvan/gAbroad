@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Universitys from './Universitys';
 import CountryFilter from './CountryFilter';
+import VersityFilter from './VersityFilter';
 
 const VersityList = () => {
     const [universities, setUniversities] = useState([]);
@@ -15,7 +16,7 @@ const VersityList = () => {
 
         const list = [...defaultList];
         const filteredCountries = list.filter((country) => {
-                                if (checkedCountries.includes(country.countryName.toLowerCase())) return true;
+        if (checkedCountries.includes(country.countryName.toLowerCase())) return true;
             return false;
         });
     
@@ -30,13 +31,16 @@ const VersityList = () => {
             setUniversities(data);
             setDefaultList(data);
         });
-        console.log(universities)
+        // console.log(universities)
        
     }, [])
-    console.log('u', universities)
+    // console.log('u', universities)
     return (
         <div>
-            <CountryFilter getCountries={country}></CountryFilter>
+            <div className='lg:ml-72 lg:flex mt-16 mb-28 '>
+             <CountryFilter getCountries={country}></CountryFilter>
+            <VersityFilter/>
+            </div>
             <Universitys versity= {universities} />
         </div>
     );

@@ -22,7 +22,7 @@ const FindCourse = () => {
             <h1 className='text-4xl font-medium text-primary mt-16 text-start lg:ml-28'>Find Course <span className='text-secondary'>to Study Abroad</span> </h1>
             <p className='mt-10 text-xl font-medium text-start lg:ml-28'>Browse Institution worldwide</p>
 
-<div className=' lg:ml-32 lg:flex mt-16 mb-16 '>
+<div >
 
        {/* <div className="dropdown">
        <button className='border border-black sm:w-60 lg:w-96 p-3 flex justify-around'>Countries <FaAngleDown className=' mt-1'/> </button>

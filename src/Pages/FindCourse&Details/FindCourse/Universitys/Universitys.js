@@ -9,7 +9,7 @@ const Universitys = ({versity}) => {
 
     return (
        
-            <div className='lg:mt-28'>
+            <div className='lg:mt-32'>
                
             {
                 versity.map(universities=> <VersityCard

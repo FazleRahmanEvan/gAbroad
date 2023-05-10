@@ -26,6 +26,10 @@ import Users from './Pages/Dashboard/Users/Users';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Applicants from './Pages/Dashboard/Applicants/Applicants';
+import Australia from './Pages/Australia/Australia/Australia';
+import VisaAustralia from './Pages/Australia/VisaAustralia/VisaAustralia';
+import FundAustralia from './Pages/Australia/FundAustralia/FundAustralia';
+import EduAustralia from './Pages/Australia/EduAustralia/EduAustralia';
 
 function App() {
   return (
@@ -38,12 +42,16 @@ function App() {
      <Route path="/tearms&use" element={ <TearmsUse></TearmsUse>}></Route>
      <Route path="/privacyPolicy" element={ <PrivacyPolicy></PrivacyPolicy>}></Route>
      <Route path="/countries" element={ <Countries></Countries>}></Route>
+     <Route path="/findCourse" element={ <FindCourse></FindCourse>}></Route>
+     <Route path="/courseDetails" element={ <CourseDetails></CourseDetails>}></Route>
+     <Route path="/studyAustralia" element={ <Australia></Australia>}></Route>
+     <Route path="/visaAustralia" element={ <VisaAustralia></VisaAustralia>}></Route>
+     <Route path="/fundAustralia" element={ <FundAustralia></FundAustralia>}></Route>
+     <Route path="/educationAustralia" element={ <EduAustralia></EduAustralia>}></Route>
      <Route path="/studyCanada" element={ <Canada></Canada>}></Route>
      <Route path="/visaCanada" element={ <VisaCanada></VisaCanada>}></Route>
      <Route path="/fundCanada" element={ <FundCanada></FundCanada>}></Route>
      <Route path="/educationCanada" element={ <EduCanada></EduCanada>}></Route>
-     <Route path="/findCourse" element={ <FindCourse></FindCourse>}></Route>
-     <Route path="/courseDetails" element={ <CourseDetails></CourseDetails>}></Route>
      <Route path="/applyNow" element={ 
      <RequireAuth>
       <ApplyNow></ApplyNow>

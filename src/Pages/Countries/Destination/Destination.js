@@ -16,7 +16,7 @@ const Destination = () => {
             />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">Australia</h2>
+          <h2 className="card-title"><Link to="/studyAustralia">Australia</Link></h2>
             <p className="text-justify">Lorem ipsum dolor sit amet consectetur. Cursus lacinia volutpat urna senectus ac sit amet. Amet proin senectus et.</p>
           </div>
         </div>

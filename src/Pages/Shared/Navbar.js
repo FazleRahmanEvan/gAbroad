@@ -154,7 +154,7 @@ const [admin] = useAdmin(user)
           <ul className="p-2 bg-neutral">
           <li className="mt-4 "><Link to="/countries">Countries</Link></li>
           <li className="mt-4 "><Link to="/findCourse">Find Course</Link></li>
-          <li className="mt-4 "><Link to="/findScholarship">Find Scholarship</Link></li>
+          {/* <li className="mt-4 "><Link to="/findScholarship">Find Scholarship</Link></li> */}
           </ul>
         </li>
               <li className="mt-4 "><Link to="/services">Services</Link></li>
@@ -217,7 +217,7 @@ const [admin] = useAdmin(user)
           <ul className="p-2 bg-neutral">
           <li className="mt-4 "><Link to="/countries">Countries</Link></li>
           <li className="mt-4 "><Link to="/findCourse">Find Course</Link></li>
-          <li className="mt-4 "><Link to="/findScholarship">Find Scholarship</Link></li>
+          {/* <li className="mt-4 "><Link to="/findScholarship">Find Scholarship</Link></li> */}
           </ul>
         </li>
             <li className=""><Link to="/services">Services</Link></li>

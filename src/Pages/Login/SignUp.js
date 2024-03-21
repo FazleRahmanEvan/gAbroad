@@ -33,7 +33,7 @@ const SignUp = () => {
       }
 
       if(token){
-        navigate('/');
+        navigate('/applyNow');
     }
 
     const handleSignUp =async data => {

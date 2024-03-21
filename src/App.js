@@ -52,10 +52,11 @@ function App() {
      <Route path="/visaCanada" element={ <VisaCanada></VisaCanada>}></Route>
      <Route path="/fundCanada" element={ <FundCanada></FundCanada>}></Route>
      <Route path="/educationCanada" element={ <EduCanada></EduCanada>}></Route>
-     <Route path="/applyNow" element={ 
+     <Route path="/applyNow" element={ <ApplyNow></ApplyNow>}></Route>
+     {/* <Route path="/applyNow" element={ 
      <RequireAuth>
       <ApplyNow></ApplyNow>
-     </RequireAuth>}></Route>
+     </RequireAuth>}></Route> */}
      <Route path="/login" element={ <Login></Login>}></Route>
      <Route path="/signup" element={ <SignUp></SignUp>}></Route>
      <Route path="/adminDashboard" element={<RequireAuth><Dashboard/>

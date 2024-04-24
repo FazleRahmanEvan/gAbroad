@@ -10,7 +10,7 @@ const StudyDestination = () => {
     <div className=" mb-10 mt-20">
       <h1 className=" text-start lg:ml-16 text-4xl font-medium text-primary">Pick a <span className="text-secondary"> study Destination
         </span></h1>
-           <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6 p-6 lg:ml-6 mb-14 mt-14">
+           <div className=" grid justify-items-center lg:grid-cols-4 md:grid-cols-2 gap-6 p-6 lg:ml-6 mb-14 mt-14">
     <div className="card w-80 bg-base-100 shadow-xl">
       <figure>
         

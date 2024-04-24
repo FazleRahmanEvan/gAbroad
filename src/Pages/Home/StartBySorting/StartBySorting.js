@@ -10,7 +10,8 @@ const StartBySorting = () => {
       <h1 className="text-primary text-4xl font-medium mt-16 mb-16">
         Start By <span className="text-secondary"> Sorting</span>
       </h1>
-      <div className="lg:flex sm:ml- justify-center mb-10">
+      <div className="mb-10 grid justify-items-center">
+        <div className=" lg:flex lg:ml- ">
         <div class="card w-80 outline outline-primary bg-base-100 rounded-none shadow-xl">
           <p className="text-3xl mb-7 mt-5 ml-20">
             <IoLocationOutline />
@@ -44,6 +45,8 @@ const StartBySorting = () => {
           </div>
           
         </div>
+        </div>
+       
       </div>
     </div>
   );
